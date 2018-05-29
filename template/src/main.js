@@ -7,6 +7,13 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
+{{#if_eq platform "desktop"}}
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+{{/if_eq}}
+
 
 Vue.config.productionTip = false
 

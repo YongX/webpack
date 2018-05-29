@@ -79,6 +79,23 @@ module.exports = {
       type: 'confirm',
       message: 'Use history mode?'
     },
+    platform: {
+      when: 'isNotTest',
+      type: 'list',
+      message: 'Choose a platform',
+      choices: [
+        {
+          name: 'mobile',
+          value: 'mobile',
+          short: 'Mobile',
+        },
+        {
+          name: 'desktop',
+          value: 'desktop',
+          short: 'Desktop',
+        }
+      ],
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -175,6 +192,7 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/basic.css': "platform === 'mobile'"
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
