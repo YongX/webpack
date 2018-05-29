@@ -22,6 +22,7 @@ export default {
 }
 </script>
 
+<style src="./basic.css"></style>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
