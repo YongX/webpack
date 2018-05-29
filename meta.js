@@ -74,6 +74,11 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
+    routerConfig: {
+      when: 'isNotTest && router',
+      type: 'confirm',
+      message: 'Use history mode?'
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
