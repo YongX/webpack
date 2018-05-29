@@ -7,6 +7,13 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
+{{#useElement}}
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+{{/useElement}}
+
 
 Vue.config.productionTip = false
 

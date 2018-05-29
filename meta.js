@@ -79,6 +79,16 @@ module.exports = {
       type: 'confirm',
       message: 'Use history mode?'
     },
+    desktop: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Platform is desktop',
+    },
+    useElement: {
+      when: 'isNotTest && desktop',
+      type: 'confirm',
+      message: 'use Element UI?'
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
