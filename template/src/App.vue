@@ -22,7 +22,10 @@ export default {
 }
 </script>
 
+{{#if_eq platform 'mobile'}}
 <style src="./basic.css"></style>
+{{/if_eq}}
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

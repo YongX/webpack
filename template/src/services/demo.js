@@ -42,3 +42,5 @@ axios.post('/user', {
   .catch(function (error) {
     console.log(error);
   });
+
+export default getUser

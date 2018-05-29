@@ -2,7 +2,7 @@
 
 module.exports = {
   "plugins": {
-    {{#if_eq desktop "No"}}
+    {{#if_eq platform "mobile"}}
     "postcss-import": {},
     "postcss-url": {},
     "postcss-aspect-ratio-mini": {},
@@ -26,11 +26,11 @@ module.exports = {
       'postcss-zindex': false
     },
     {{/if_eq}}
-    {{#desktop}}
+    {{#if_eq platform "desktop"}}
     "postcss-import": {},
     "postcss-url": {},
     // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {}
-    {{/desktop}}
+    {{/if_eq}}
   }
 }

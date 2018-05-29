@@ -79,15 +79,22 @@ module.exports = {
       type: 'confirm',
       message: 'Use history mode?'
     },
-    desktop: {
+    platform: {
       when: 'isNotTest',
-      type: 'confirm',
-      message: 'Platform is desktop',
-    },
-    useElement: {
-      when: 'isNotTest && desktop',
-      type: 'confirm',
-      message: 'use Element UI?'
+      type: 'list',
+      message: 'Choose a platform',
+      choices: [
+        {
+          name: 'mobile',
+          value: 'mobile',
+          short: 'Mobile',
+        },
+        {
+          name: 'desktop',
+          value: 'desktop',
+          short: 'Desktop',
+        }
+      ],
     },
     lint: {
       when: 'isNotTest',
@@ -185,6 +192,7 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/basic.css': "platform === 'mobile'"
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
