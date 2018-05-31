@@ -48,7 +48,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -77,6 +77,25 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
+    }),
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'vue',
+          entry: 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js',
+          global: 'Vue',
+        },
+        {
+          module: 'VueRouter',
+          entry: 'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js',
+          global: 'VueRouter',
+        },
+        {
+          module: 'axios',
+          entry: 'https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js',
+          global: 'axios',
+        },
+      ],
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
