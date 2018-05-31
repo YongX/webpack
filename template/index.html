@@ -10,6 +10,9 @@
     <!-- built files will be auto injected -->
 
     {{#if_eq platform 'mobile'}}
+    <!--https://www.w3cplus.com/mobile/vw-layout-in-vue.html-->
+    <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    <script> window.onload = function () { window.viewportUnitsBuggyfill.init({ hacks: window.viewportUnitsBuggyfillHacks }); } </script>
     <% if (htmlWebpackPlugin.options.dev) { %>
     <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
     <script>
