@@ -68,8 +68,11 @@ h6 {
   font-weight: 400;
 }
 
+/*https://www.w3cplus.com/mobile/vw-layout-in-vue.html*/
 img {
+  content: normal !important;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 textarea {

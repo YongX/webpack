@@ -7,6 +7,7 @@ const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
@@ -55,7 +56,28 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      dev: true,
       inject: true
+    }),
+
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: 'vue',
+          entry: 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js',
+          global: 'Vue',
+        },
+        {
+          module: 'VueRouter',
+          entry: 'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.js',
+          global: 'VueRouter',
+        },
+        {
+          module: 'axios',
+          entry: 'https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.js',
+          global: 'axios',
+        },
+      ],
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

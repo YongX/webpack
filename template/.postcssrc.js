@@ -9,6 +9,7 @@ module.exports = {
     "postcss-write-svg": {
       utf8: false
     },
+    "postcss-nested": {},
     "postcss-cssnext": {},
     "postcss-px-to-viewport": {
       viewportWidth: 750,
@@ -29,7 +30,8 @@ module.exports = {
     {{#if_eq platform "desktop"}}
     "postcss-import": {},
     "postcss-url": {},
-    // to edit target browsers: use "browserslist" field in package.json
+    "postcss-nested": {},
+      // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {}
     {{/if_eq}}
   }
