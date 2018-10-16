@@ -10,7 +10,7 @@ module.exports = {
       utf8: false
     },
     "postcss-nested": {},
-    "postcss-cssnext": {},
+    "postcss-preset-env": {},
     "postcss-px-to-viewport": {
       viewportWidth: 750,
       viewportHeight: 1334,
@@ -22,9 +22,10 @@ module.exports = {
     },
     "postcss-viewport-units": {},
     "cssnano": {
-      preset: 'advanced',
-      autoprefixer: false,
-      'postcss-zindex': false
+      preset: [
+        'advanced',
+        {'zindex': false}
+      ]
     },
     {{/if_eq}}
     {{#if_eq platform "desktop"}}
