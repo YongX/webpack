@@ -13,6 +13,16 @@
     <!--https://www.w3cplus.com/mobile/vw-layout-in-vue.html-->
     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
     <script> window.onload = function () { window.viewportUnitsBuggyfill.init({ hacks: window.viewportUnitsBuggyfillHacks }); } </script>
+    <script>
+      if (/debug=/.test(location.search)) {
+        document.write(`<script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"><\/script>`)
+      }
+    </script>
+    <script>
+      if (window.VConsole) {
+        new window.VConsole()
+      }
+    </script>
     <% if (htmlWebpackPlugin.options.dev) { %>
     <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
     <script>
