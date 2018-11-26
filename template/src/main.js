@@ -18,7 +18,7 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+const app = new Vue({
   el: '#app',
   {{#router}}
   router,
@@ -31,3 +31,8 @@ new Vue({
   template: '<App/>'
   {{/if_eq}}
 })
+
+if (window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
+  // for vue devtools
+  window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app.constructor
+}
