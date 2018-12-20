@@ -83,18 +83,33 @@ const webpackConfig = merge(baseWebpackConfig, {
       externals: [
         {
           module: 'vue',
-          entry: 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js',
+          entry: 'https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js',
           global: 'Vue',
         },
         {
           module: 'VueRouter',
-          entry: 'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js',
+          entry: 'https://cdn.jsdelivr.net/npm/vue-router@3.0.2/dist/vue-router.min.js',
           global: 'VueRouter',
+        },
+        {
+          module: 'vuex',
+          entry: 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js',
+          global: 'Vuex',
         },
         {
           module: 'axios',
           entry: 'https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js',
           global: 'axios',
+        },
+        {
+          module: 'Quasar',
+          entry: 'https://cdn.jsdelivr.net/npm/quasar-framework@0.17.18/dist/umd/quasar.ios.umd.min.js',
+          global: 'Quasar',
+        },
+        {
+          module: 'QuasarI18n',
+          entry: 'https://cdn.jsdelivr.net/npm/quasar-framework@0.17.18/dist/umd/i18n.zh-hans.umd.min.js',
+          global: 'Quasar',
         },
       ],
     }),
